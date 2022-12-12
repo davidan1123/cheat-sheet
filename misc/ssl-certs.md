@@ -40,6 +40,10 @@ openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca.pem -CAkey ca-key.pem -o
 
 X.509 Certificates exist in Base64 Formats **PEM (.pem, .crt, .ca-bundle)**, **PKCS#7 (.p7b, p7s)** and Binary Formats **DER (.der, .cer)**, **PKCS#12 (.pfx, p12)**.
 
+
+cat cert.pem > fullchain.pem
+cat ca.pem >> fullchain.pem
+
 ### Convert Certs
 
 COMMAND | CONVERSION
