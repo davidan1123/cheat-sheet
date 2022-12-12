@@ -35,14 +35,16 @@ echo extendedKeyUsage = serverAuth >> extfile.cnf
 ```bash
 openssl x509 -req -sha256 -days 365 -in cert.csr -CA ca.pem -CAkey ca-key.pem -out cert.pem -extfile extfile.cnf -CAcreateserial
 ```
+```bash
+cat cert.pem > fullchain.pem
+cat ca.pem >> fullchain.pem
+```
 
 ## Certificate Formats
 
 X.509 Certificates exist in Base64 Formats **PEM (.pem, .crt, .ca-bundle)**, **PKCS#7 (.p7b, p7s)** and Binary Formats **DER (.der, .cer)**, **PKCS#12 (.pfx, p12)**.
 
 
-cat cert.pem > fullchain.pem
-cat ca.pem >> fullchain.pem
 
 ### Convert Certs
 
